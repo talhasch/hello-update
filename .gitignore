@@ -11,4 +11,6 @@ Thumbs.db
 /app/background.js
 /app/**/*.map
 
-idea
+.idea
+
+gh.js

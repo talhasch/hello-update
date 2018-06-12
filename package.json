@@ -41,7 +41,8 @@
         "owner": "talhasch",
         "repo": "hello-update",
         "vPrefixedTagName": false,
-        "private": false
+        "private": false,
+        "releaseType": "draft"
       }
     ]
   },

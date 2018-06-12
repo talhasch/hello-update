@@ -17,11 +17,35 @@
     "directories": {
       "buildResources": "resources"
     },
-    "publish": [{
-      "provider": "github",
-      "owner": "talhasch",
-      "repo": "hello-update"
-    }]
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "tar.gz"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.finance",
+      "type": "distribution"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "talhasch",
+        "repo": "hello-update"
+      }
+    ]
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",

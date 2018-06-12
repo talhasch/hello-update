@@ -3,36 +3,49 @@
 <head>
   <meta charset="utf-8">
   <title>Electron Boilerplate</title>
+  <style>
+    #console {
+      width: 100%;
+    }
+
+    .message {
+      margin: 10px 4px;
+      background: #c3d9ff;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <div id="app" class="container" style="display: none;">
-    <h1 id="greet"></h1>
-    <p>
-      Welcome to <a href="http://electron.atom.io" class="js-external-link">Electron</a> app running on this <strong id="os"></strong> machine.
-    </p>
-    <p>
-      App author: <strong id="author"></strong>
-    </p>
-    <p>
-      Environment: <strong id="env"></strong>
-    </p>
-    <p>
-      Electron version: <strong id="electron-version"></strong>
-    </p>
-  </div>
+<div id="app" class="container" style="display: none;">
+  <h1 id="greet"></h1>
+  <p>
+    Welcome to <a href="http://electron.atom.io" class="js-external-link">Electron</a> app running on this <strong
+    id="os"></strong> machine.
+  </p>
+  <p>
+    App author: <strong id="author"></strong>
+  </p>
+  <p>
+    Environment: <strong id="env"></strong>
+  </p>
+  <p>
+    Electron version: <strong id="electron-version"></strong>
+  </p>
+</div>
+
+<div id="console"></div>
+
+<script>
+  // Display the current version
+
+  const {ipcRenderer} = require('electron');
+  ipcRenderer.on('message', function (event, text) {
+    document.querySelector('#console').innerHTML += '<div class="message">' + text + '</div>';
+  })
+</script>
 
 
-  <script>
-    // Display the current version
-
-    const {ipcRenderer} = require('electron');
-    ipcRenderer.on('message', function(event, text) {
-      console.log(text);
-    })
-  </script>
-
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

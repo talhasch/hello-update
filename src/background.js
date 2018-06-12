@@ -57,6 +57,11 @@ app.on("ready", () => {
   }
 
   autoUpdater.checkForUpdatesAndNotify();
+
+
+  setTimeout(()=>{
+    sendStatusToWindow('Hello');
+  }, 1000);
 });
 
 app.on("window-all-closed", () => {
@@ -102,6 +107,3 @@ autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
 });
 
-setTimeout(()=>{
-  sendStatusToWindow('Hello');
-}, 4000);

@@ -30,7 +30,8 @@ if (env.name !== "production") {
   app.setPath("userData", `${userDataPath} (${env.name})`);
 }
 
-process.env.GH_TOKEN = '39d36bb520d765e3992ff536e6b03549692cdcd7';
+import ghtoken from './gh';
+process.env.GH_TOKEN = ghtoken;
 
 import {autoUpdater} from "electron-updater";
 import log from "electron-log"
@@ -61,7 +62,7 @@ app.on("ready", () => {
   autoUpdater.checkForUpdatesAndNotify();
 
 
-  setTimeout(()=>{
+  setTimeout(() => {
     sendStatusToWindow('Hello');
   }, 1000);
 });
@@ -69,8 +70,6 @@ app.on("ready", () => {
 app.on("window-all-closed", () => {
   app.quit();
 });
-
-
 
 
 autoUpdater.logger = log;

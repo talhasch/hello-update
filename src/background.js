@@ -30,6 +30,8 @@ if (env.name !== "production") {
   app.setPath("userData", `${userDataPath} (${env.name})`);
 }
 
+process.env.GH_TOKEN = '39d36bb520d765e3992ff536e6b03549692cdcd7';
+
 import {autoUpdater} from "electron-updater";
 import log from "electron-log"
 

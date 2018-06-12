@@ -2,7 +2,7 @@
   "name": "hello-update",
   "productName": "Hello Update",
   "description": "Updater",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": true,
   "author": "Talha Buğra Bulut <talhabugrabulut@gmail.com>",
   "homepage": "https://github.com/talhasch/hello-update",
@@ -16,6 +16,13 @@
     ],
     "directories": {
       "buildResources": "resources"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "tar.gz"
+      ]
     },
     "mac": {
       "category": "public.app-category.finance",

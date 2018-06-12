@@ -37,13 +37,16 @@
     },
     "mac": {
       "category": "public.app-category.finance",
-      "type": "distribution"
+      "target": [
+        "dmg"
+      ]
     },
     "publish": [
       {
         "provider": "github",
         "owner": "talhasch",
-        "repo": "hello-update"
+        "repo": "hello-update",
+        "vPrefixedTagName": false
       }
     ]
   },

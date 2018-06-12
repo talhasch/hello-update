@@ -2,7 +2,7 @@
   "name": "hello-update",
   "productName": "Hello Update",
   "description": "Updater",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "author": "Talha Buğra Bulut <talhabugrabulut@gmail.com>",
   "homepage": "https://github.com/talhasch/hello-update",
@@ -17,27 +17,10 @@
     "directories": {
       "buildResources": "resources"
     },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ]
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "rpm",
-        "tar.gz"
-      ]
-    },
     "mac": {
       "category": "public.app-category.finance",
       "target": [
+        "zip",
         "dmg"
       ]
     },
@@ -46,7 +29,9 @@
         "provider": "github",
         "owner": "talhasch",
         "repo": "hello-update",
-        "vPrefixedTagName": false
+        "vPrefixedTagName": false,
+        "private": false,
+        "token": "d01da7bc0a1faa31bd0c011775e2e1b4e0d1cf0d"
       }
     ]
   },
@@ -58,7 +43,7 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit && npm run e2e",
     "start": "node build/start.js",
-    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder -mwl"
+    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder -m"
   },
   "dependencies": {
     "fs-jetpack": "^1.0.0",

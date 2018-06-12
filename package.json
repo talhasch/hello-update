@@ -17,7 +17,11 @@
     "directories": {
       "buildResources": "resources"
     },
-    "publish": null
+    "publish": [{
+      "provider": "github",
+      "owner": "talhasch",
+      "repo": "hello-update"
+    }]
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
@@ -41,7 +45,9 @@
     "css-loader": "^0.28.7",
     "electron": "1.7.9",
     "electron-builder": "^19.43.3",
+    "electron-log": "^2.2.14",
     "electron-mocha": "^5.0.0",
+    "electron-updater": "^2.21.10",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "mocha": "^4.0.1",
     "source-map-support": "^0.5.0",

@@ -4,7 +4,7 @@ import env from "env";
 
 describe("hello world", () => {
   it("greets", () => {
-    expect(greet()).to.equal("Hello World!");
+    expect(greet()).to.equal("Hello World! This is a beautiful app!");
   });
 
   it("says goodbye", () => {

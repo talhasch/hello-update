@@ -22,6 +22,17 @@
     </p>
   </div>
 
+
+  <script>
+    // Display the current version
+
+    const {ipcRenderer} = require('electron');
+    ipcRenderer.on('message', function(event, text) {
+      console.log(text);
+    })
+  </script>
+
+
   <script src="app.js"></script>
 </body>
 </html>

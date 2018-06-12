@@ -2,7 +2,7 @@
   "name": "hello-update",
   "productName": "Hello Update",
   "description": "Updater",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "author": "Talha Buğra Bulut <talhabugrabulut@gmail.com>",
   "homepage": "https://github.com/talhasch/hello-update",

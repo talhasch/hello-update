@@ -8,9 +8,9 @@ import "./helpers/external_links.js";
 // Everything below is just to show you how it works. You can delete all of it.
 // ----------------------------------------------------------------------------
 
-import { remote } from "electron";
+import {remote} from "electron";
 import jetpack from "fs-jetpack";
-import { greet } from "./hello_world/hello_world";
+import {greet} from "./hello_world/hello_world";
 import env from "env";
 
 const app = remote.app;
@@ -33,3 +33,26 @@ document.querySelector("#author").innerHTML = manifest.author;
 document.querySelector("#env").innerHTML = env.name;
 document.querySelector("#electron-version").innerHTML =
   process.versions.electron;
+
+
+import {version} from '../package.json';
+
+document.querySelector('.ver').innerText = `v${version}`;
+
+
+const loadItems = () => {
+  const itemsRoot = document.querySelector('.item-list');
+  itemsRoot.innerHTML = '';
+
+  for (let key in localStorage) {
+    itemsRoot.innerHTML += `<div class="item">${key} - ${localStorage[key]}</div>`;
+  }
+};
+
+loadItems();
+
+document.querySelector('.btn-save').onclick = () => {
+  const k = new Date().toISOString();
+  localStorage.setItem(k, version);
+  loadItems();
+};
